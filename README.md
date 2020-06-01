@@ -33,7 +33,7 @@ float mysqrt_1(float n)
 }
 ```
 
-- 执行时间
+- 耗时
 
   | n      | runtime(ns) |
   | ------ | ----------- |
@@ -80,7 +80,7 @@ float mysqrt_2(float n)
 }
 ```
 
-- 执行时间
+- 耗时
 
 | n      | runtime(ns) |
 | ------ | ----------- |
@@ -126,7 +126,7 @@ float mysqrt_3(float x)
 }
 ```
 
-- 执行时间
+- 耗时
 
 | n      | runtime(ns) |
 | ------ | ----------- |

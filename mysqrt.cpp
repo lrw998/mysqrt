@@ -120,6 +120,7 @@ int main(int argc, char* argv[])
         std::cout<<"Less parameters\n";
         exit(1);
     }
+    
     float n = atof(argv[1]);
 
     // 测试sqrt库函数
