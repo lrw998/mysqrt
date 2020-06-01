@@ -1,4 +1,4 @@
-### 自己实现sqrt函数
+### 实现sqrt函数功能
 
 #### 1 二分法
 
@@ -137,7 +137,27 @@ float mysqrt_3(float x)
 
 可以看出这种方法的效率特别高，在实际应用中使用它效果会比其他的好。
 
-​                                     
+​                               
+
+### 本文的project      
+
+Github仓库：https://github.com/lrw998/mysqrt
+
+项目使用cmake管理，源文件为`mysqrt.cpp`
+
+​                     
+
+使用说明：
+
+（1）cd进入`mysqrt`目录
+
+（2）执行`cmake .`命令生成makefile
+
+（3）执行`make`编译工程，在`mysqrt/bin`目录下生成可执行文件
+
+（4） cd进入./bin目录，`./mysqrt`运行可执行文件
+
+​                      
 
 ### 引用
 

@@ -13,6 +13,10 @@ struct sqrt_st
     long runtime;
 };
 
+/*
+ * function:获取系统时间（纳秒级）
+ * author:wanglu
+ */
 long getTimeNs()
 {
     struct timespec ts;
@@ -91,6 +95,10 @@ float mysqrt_3(float x)
     return 1/x;
 }
 
+/*
+ * function:测试不同的方法
+ * author:wanglu
+ */
 struct sqrt_st test(float (*mysqrt)(float), float n)
 {
     struct sqrt_st sqrt_struct;
@@ -114,28 +122,25 @@ int main(int argc, char* argv[])
     }
     float n = atof(argv[1]);
 
+    // 测试sqrt库函数
+    struct sqrt_st sqrt_sys = test(sqrt,n);
+    std::cout<<"sys_sqrt's result:"<<sqrt_sys.result<<std::endl;
+    std::cout<<"sys_sqrt's runtime:"<<sqrt_sys.runtime<<std::endl<<std::endl;
 
-    long start_time = getTimeNs();
-
-    // float result = mysqrt_2(n);
-    float result = sqrt(n);
-
-    long end_time = getTimeNs();
-
- 
-
+    // 测试mysqrt_1
     struct sqrt_st sqrt_st_1 = test(mysqrt_1,n);
     std::cout<<"mtsqrt_1's result:"<<sqrt_st_1.result<<std::endl;
-    std::cout<<"mtsqrt_1's run time:"<<sqrt_st_1.runtime<<std::endl<<std::endl;
+    std::cout<<"mtsqrt_1's runtime:"<<sqrt_st_1.runtime<<std::endl<<std::endl;
 
-
+    // 测试mysqrt_2
     struct sqrt_st sqrt_st_2 = test(mysqrt_2,n);
     std::cout<<"mtsqrt_2's result:"<<sqrt_st_2.result<<std::endl;
-    std::cout<<"mtsqrt_2's run time:"<<sqrt_st_2.runtime<<std::endl<<std::endl;
+    std::cout<<"mtsqrt_2's runtime:"<<sqrt_st_2.runtime<<std::endl<<std::endl;
 
+    // 测试mysqrt_3
     struct sqrt_st sqrt_st_3 = test(mysqrt_3,n);
     std::cout<<"mtsqrt_3's result:"<<sqrt_st_3.result<<std::endl;
-    std::cout<<"mtsqrt_3's run time:"<<sqrt_st_3.runtime<<std::endl<<std::endl;
+    std::cout<<"mtsqrt_3's runtime:"<<sqrt_st_3.runtime<<std::endl<<std::endl;
 
     return 0;
 }
